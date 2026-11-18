@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/dialog_background"
+    android:layout_margin="20dp"
+    android:layout_gravity="center"
+    android:elevation="4dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/dialog_room_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Room Name"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"/>
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/dialog_room_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: "
+        android:textSize="20sp"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dialog_room_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/room_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="11/05/27"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toBottomOf="@id/dialog_room_title"
+        app:layout_constraintStart_toEndOf="@id/dialog_room_date"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Time -->
+    <TextView
+        android:id="@+id/dialog_room_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time: "
+        android:textSize="20sp"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dialog_room_date"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/room_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="11:00"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toTopOf="@id/dialog_room_time"
+        app:layout_constraintStart_toEndOf="@id/dialog_room_time"/>
+
+    <!-- Location -->
+    <TextView
+        android:id="@+id/dialog_room_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location: "
+        android:textSize="20sp"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dialog_room_time"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/room_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Eduvos Pretoria Campus Lv 101"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toTopOf="@id/dialog_room_location"
+        app:layout_constraintStart_toEndOf="@id/dialog_room_location"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- Availability -->
+    <TextView
+        android:id="@+id/dialog_room_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Availability: "
+        android:textSize="20sp"
+        android:textColor="@color/brown_dark"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toBottomOf="@id/room_location"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/room_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="20"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toTopOf="@id/dialog_room_availability"
+        app:layout_constraintStart_toEndOf="@id/dialog_room_availability"/>
+
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/dialog_room_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Description: "
+        android:textSize="20sp"
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/dialog_room_availability"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/room_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="A chill session where IT students can study together and learn together."
+        android:textColor="@color/brown_dark"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toBottomOf="@id/dialog_room_description"/>
+
+    <!-- Close Button -->
+    <Button
+        android:id="@+id/dialog_join_session"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Join session"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/brown_text_light"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toBottomOf="@id/room_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F3ED">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="22dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Habit Tracker"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#241D19"
+            android:fontFamily="serif"/>
+    </LinearLayout>
+
+    <!-- Main content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Empty state -->
+        <LinearLayout
+            android:id="@+id/emptyState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            android:paddingBottom="24dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✦"
+                android:textSize="22sp"
+                android:textColor="#C99A58"
+                android:layout_marginBottom="-4dp" />
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:gravity="center"
+                android:text="🪴"
+                android:textSize="65sp"
+                android:background="#F1E7D9"
+                android:contentDescription="A small potted plant" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="No habits yet"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="#241D19" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Start building your habits and\nmake progress towards your goals!"
+                android:textSize="17sp"
+                android:lineSpacingExtra="4dp"
+                android:gravity="center"
+                android:textColor="#625953" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/bg_book_icon"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="14dp"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_book_icon"
+                android:gravity="center"
+                android:text="🔥"
+                android:textSize="27sp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="14dp">
+
+                <TextView
+                    android:id="@+id/tvStreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5 Day Streak"
+                    android:textColor="#2F2119"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Keep going!"
+                    android:textColor="#76665A"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/bg_detail_card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="14dp"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/tvProgressPercent"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@color/brown_dark"
+                android:gravity="center"
+                android:text="0%"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Daily Progress"
+                    android:textColor="@color/brown_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif"/>
+
+                <TextView
+                    android:id="@+id/tvOutOf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Keep going!"
+                    android:textColor="#76665A"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Today's Habits"
+            android:textColor="@color/brown_dark"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:textSize="20dp"
+            android:fontFamily="serif"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerHabits"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:clipToPadding="false"/>
+
+    </LinearLayout>
+
+    <!-- Add Habit button remains available -->
+    <Button
+        android:id="@+id/btnAddHabit"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="14dp"
+        android:text="+  Add Habit"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#30231D"
+        android:stateListAnimator="@null"
+        android:elevation="0dp" />
+
+
+
+</LinearLayout>
